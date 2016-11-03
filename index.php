@@ -1,21 +1,11 @@
-<form action="index.php" method="GET">
-    Name:<br><input type="text" name="name"><br>
-    Age:<br><input type="text" name="age" size="5"><br><br>
-    <input type="submit" value="Submit">
-</form>
-
-
-
-
-
 <?php
 
-$name = $_GET['name'];
-$age = $_GET['age'];
-echo "Hello. ".$name. ' !';
+ini_set('display_errors', 'On');
 
-// type the above into the url such as localhost:8888/?name="Christopher"&age=28
-?>
-
+try {
+    $db = new PDO('mysql.host=127.0.0.1;dbname=pdo','root','root');
+} catch(PDOException $e) {
+    die('Site is down.');
+}
 
 
